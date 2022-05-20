@@ -112,11 +112,11 @@ ipch/
 *.vsp
 *.vspx
 *.sap
-# 6-10 这里是2022.5.20修改的ignore
-*.[sln]
-*.[vcxproj]
-*.[vcxproj.filters]
-*.[vcxproj.user]
+# 115-119 这里是2022.5.20修改的ignore
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 
 # Visual Studio Trace Files
 *.e2e
