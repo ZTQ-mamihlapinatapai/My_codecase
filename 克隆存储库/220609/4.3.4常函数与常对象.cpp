@@ -23,3 +23,9 @@ void test02()
 	p.func();
 
 }
+int main()
+{
+	system("pause");
+	return 0;
+}
+	
