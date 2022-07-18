@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-#define MAXSIZE 100 //Ë³Ğò±í¿ÉÄÜ´ïµ½µÄ×î´ó³¤¶È
+#define MAXSIZE 100 //çº¿æ€§è¡¨å¯èƒ½è¾¾åˆ°çš„æœ€å¤§é•¿åº¦
 #define TRUE 1
 #define FALSE 0
 #define OK 1
@@ -14,39 +14,39 @@ typedef struct
 	ElemType* elem;
 	int length;
 }SqList;
-//¡¾2.1¡¿ÏßĞÔ±íLµÄ³õÊ¼»¯£º
-Status InitList_Sq(SqList& L) //¹¹ÔìÒ»¸ö¿ÕµÄË³Ğò±í
+//ã€2.1ã€‘çº¿æ€§è¡¨Lçš„åˆå§‹åŒ–ï¼š
+Status InitList_Sq(SqList& L) //æ„é€ ä¸€ä¸ªç©ºçš„é¡ºåºè¡¨
 {
-	L.elem = new ElemType[MAXSIZE]; //ÎªË³Ğò±í·ÖÅä¿Õ¼ä
+	L.elem = new ElemType[MAXSIZE]; //ä¸ºé¡ºåºè¡¨åˆ†é…ç©ºé—´
 	if (!L.elem)
-		exit(OVERFLOW); //´æ´¢·ÖÅäÊ§°Ü
-	L.length = 0;  //¿Õ±í³¤¶ÈÎª0
+		exit(OVERFLOW); //å­˜å‚¨åˆ†é…å¤±è´¥
+	L.length = 0;  //ç©ºè¡¨é•¿åº¦ä¸º0
 	return OK;
 }
-//Ïú»ÙÏßĞÔ±í£º
+//é”€æ¯çº¿æ€§è¡¨ï¼š
 void DestroyList(SqList& L)
 {
 	if (L.elem)
 		delete L.elem;
 }
-//Çå¿ÕÏßĞÔ±í£º
+//æ¸…ç©ºçº¿æ€§è¡¨ï¼š
 void ClearList(SqList& L)
 {
 	L.length = 0;
 }
-//ÇóÏßĞÔ±íµÄ³¤¶È£º
+//æ±‚çº¿æ€§è¡¨çš„é•¿åº¦ï¼š
 int GetLength(SqList L)
 {
 	return (L.length);
 }
-//ÅĞ¶ÏÏßĞÔ±íLÊÇ·ñÎª¿Õ
+//åˆ¤æ–­çº¿æ€§è¡¨Læ˜¯å¦ä¸ºç©º
 int IsEmpty(SqList L)
 {
 	if (L.length = 0)
 		return TRUE;
 	else return FALSE;
 }
-//¡¾2.2¡¿ÏßĞÔ±íµÄÈ¡Öµ£¨¸ù¾İÎ»ÖÃi»ñÈ¡ÏàÓ¦Î»ÖÃÊı¾İÔªËØµÄÄÚÈİ£©
+//ã€2.2ã€‘çº¿æ€§è¡¨çš„å–å€¼ï¼ˆæ ¹æ®ä½ç½®iè·å–ç›¸åº”ä½ç½®æ•°æ®å…ƒç´ çš„å†…å®¹ï¼‰
 int GetElem(SqList L, int i, ElemType& e)
 {
 	if (i<1 || i>L.length) 
@@ -54,7 +54,7 @@ int GetElem(SqList L, int i, ElemType& e)
 	ElemType E = L.elem[i-1];
 	return OK;
 }
-//¡¾2.3¡¿Ë³Ğò±íµÄ²éÕÒ£¨ÔÚLÖĞ²éÕÒÓëÖ¸¶¨ÖµeÏàÍ¬µÄÊı¾İÔªËØµÄÎ»ÖÃ£©
+//ã€2.3ã€‘é¡ºåºè¡¨çš„æŸ¥æ‰¾ï¼ˆåœ¨Lä¸­æŸ¥æ‰¾ä¸æŒ‡å®šå€¼eç›¸åŒçš„æ•°æ®å…ƒç´ çš„ä½ç½®ï¼‰
 int LocateElem(SqList L, ElemType e)
 {
 	for (int i = 0; i < L.length; i++)
@@ -62,7 +62,7 @@ int LocateElem(SqList L, ElemType e)
 			return i + 1;
 	return 0;
 }
-//¡¾2.4¡¿Êı¾İ±íµÄ²åÈë
+//ã€2.4ã€‘æ•°æ®è¡¨çš„æ’å…¥
 Status ListInsert_Sq(SqList& L, int i, ElemType e)
 {
 	if (i<1 || i>L.length + 1)
@@ -75,7 +75,7 @@ Status ListInsert_Sq(SqList& L, int i, ElemType e)
 	L.length++;
 	return OK;
 }
-//¡¾2.5¡¿Êı¾İ±íµÄÉ¾³ı
+//ã€2.5ã€‘æ•°æ®è¡¨çš„åˆ é™¤
 Status ListDelete_Sq(SqList& L, int i)
 {
 	if (i<1 || i>L.length)
